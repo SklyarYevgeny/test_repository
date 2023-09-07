@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+{% block title %}Add title{% endblock %}
+{% block body %}
+
+<center>
+    <div class="add_news">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.name }}
+            {{ form.anons }}
+            {{ form.full_text }}
+            {{ form.data }}
+            <button class="btn btn-warning">Добавить</button>
+            <span>{{error}}</span>
+        </form>
+    </div>
+</center>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<center>
+<h1>Main title</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem facere harum laboriosam obcaeca.</p>
+        <h1>
+            {% for val in values %}
+                {% filter upper %}
+                    <p>Our data : {{ val }}</p>
+                {% endfilter %}
+            {% endfor %}
+        </h1>
+</center>
+{% endblock %}
+

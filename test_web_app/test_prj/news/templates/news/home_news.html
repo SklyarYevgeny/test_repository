@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+{% block title %}News{% endblock %}
+{% block body %}
+
+<center>
+    <h1>All news</h1>
+            {% if news %}
+                {% for new in news %}
+                    <div class="news">
+                        <p>Name state: {{ new.name }}</p>
+                        <p>Anons: {{ new.anons }}</p>
+                        <p>Data :{{ new.data }}</p>
+                        <a href="{% url 'news-detail' new.id %}" class="gradient-button">Button</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Not news</p>
+            {% endif %}
+</center>
+{% endblock %}

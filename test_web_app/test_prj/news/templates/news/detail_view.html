@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+{% block title %}Add title{% endblock %}
+{% block body %}
+
+<center>
+    <h2>
+        <div class="text">
+            <p><h1>{{ articles.name }}</h1></p>
+            <p>{{ articles.data }}</p>
+            <p>{{ articles.full_text }}</p>
+        </div>
+    </h2>
+    <div>
+        <a href="{% url 'news-update' articles.id %}"><button class="btn btn-success">Изменить</button></a>
+        <a href="{% url 'news-delete' articles.id %}"><button class="btn btn-danger">Удалить</button></a>
+    </div>
+</center>
+{% endblock %}
